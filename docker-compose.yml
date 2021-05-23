@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  node-app:
+    build: .
+    ports:
+      - "3000:4000" # Port 4000 is set in .env file
+    env_file:
+      - ./.env
+# Workaround for VPN
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.57.1/24
