@@ -1,0 +1,4 @@
+# ignore files in folder node_modules
+node_modules/*
+# but keep the folder (empty folder is needed to create read-only bind mount @see docker-compose.dev.yml
+!node_modules/.keep
